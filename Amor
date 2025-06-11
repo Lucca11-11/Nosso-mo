@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -128,11 +129,171 @@
       height: 100vh;
       text-align: center;
     }
+
+    #nossaHistoria {
+      background-color: #ffe6f0;
+      padding: 50px 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    #nossaHistoria.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #fotoCasal {
+      width: 60vw;
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+
+    #fraseRomantica {
+      font-size: 5vw;
+      color: #d63384;
+      font-style: italic;
+    }
+
+    /* Estilo da linha do tempo */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #ffe6f0;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #d63384;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .container {
+      padding: 20px 30px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    .container.left {
+      left: 0;
+    }
+
+    .container.right {
+      left: 50%;
+    }
+
+    .container::before {
+      content: " ";
+      position: absolute;
+      top: 15px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: #d63384;
+      border: 3px solid #fff;
+      z-index: 1;
+    }
+
+    .container.left::before {
+      right: -17px;
+    }
+
+    .container.right::before {
+      left: -17px;
+    }
+
+    .content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .timeline h3 {
+      margin-top: 0;
+      color: #d63384;
+    }
+
+    /* Estilos do carrossel */
+    #carousel-section {
+      background: #ffe6f0;
+      padding: 40px 10px;
+      max-width: 700px;
+      margin: 100px auto 50px auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(214, 51, 132, 0.3);
+    }
+
+    #carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+    #carousel img {
+      width: 100%;
+      display: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(214, 51, 132, 0.4);
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    #carousel img.active {
+      display: block;
+    }
+
+    #carousel-section button {
+      background: #d63384;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 0 5px;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    #carousel-section button:hover {
+      background: #b3296c;
+    }
+
+    #fraseCarrossel {
+      margin-top: 20px;
+      font-size: 4vw;
+      color: #d63384;
+      font-style: italic;
+    }
+
+    /* Responsividade para o botão e textos */
+    @media (min-width: 600px) {
+      button {
+        font-size: 20px;
+      }
+      #fraseIntro, #timer {
+        font-size: 24px;
+      }
+      #fraseRomantica, #fraseCarrossel {
+        font-size: 22px;
+      }
+    }
   </style>
 </head>
 <body>
   <div id="intro">
-    <img id="ursinhos" src="Ln.jpg" alt="Ursinhos abraçados" />
+    <img id="ursinhos" src="Ln.png" alt="Ursinhos abraçados" />
     <h1>QUER SABER HÁ QUANTO TEMPO VC ME ATURA?</h1>
     <button id="loveButton">CLICA AQUI</button>
   </div>
@@ -141,6 +302,49 @@
     <img id="imgCimaTimer" src="La.png" alt="Coração" />
     <p id="fraseIntro">Estamos juntos há:</p>
     <div id="timer"></div>
+  </div>
+
+  <div id="nossaHistoria">
+    <img src="sua-foto.jpg" alt="Foto do casal" id="fotoCasal"/>
+    <p id="fraseRomantica">"Cada segundo ao seu lado é meu momento favorito."</p>
+  </div>
+
+  <!-- Linha do Tempo do Relacionamento -->
+  <div class="timeline">
+    <div class="container left">
+      <div class="content">
+        <h3>08/10/2024</h3>
+        <p>O dia que tudo começou! Nosso primeiro beijo e o início da nossa história.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <h3>14/02/2025</h3>
+        <p>Nosso primeiro Dia dos Namorados juntos, cheio de amor e sorrisos.</p>
+      </div>
+    </div>
+    <div class="container left">
+      <div class="content">
+        <h3>20/04/2025</h3>
+        <p>Nossa viagem inesquecível para a praia. Dias perfeitos ao seu lado.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carrossel de Fotos -->
+  <div id="carousel-section">
+    <div id="carousel">
+      <img src="1.jpg" alt="Foto 1" class="active" />
+      <img src="2.jpg" alt="Foto 2" />
+      <img src="3.jpg" alt="Foto 3" />
+      <img src="4.jpeg" alt="Foto 3" />
+      <img src="5.jpg" alt="Foto 3" />
+    </div>
+    <div>
+      <button id="prev-btn">Anterior</button>
+      <button id="next-btn">Próximo</button>
+    </div>
+    <p id="fraseCarrossel">“Cada momento ao seu lado é uma eternidade de felicidade.”</p>
   </div>
 
   <audio id="musica" src="ordinary.mp3"></audio>
@@ -179,7 +383,7 @@
         atualizarCronometro();
         setInterval(atualizarCronometro, 1000);
         iniciarChuvaDeCoracoes();
-        timerContainer.style.display = "flex"; // Mostra e centraliza
+        timerContainer.style.display = "flex";
       }, 1000);
     });
 
@@ -197,6 +401,28 @@
         }, 7000);
       }, 300);
     }
+
+    // Código do carrossel de fotos
+    const carouselImages = document.querySelectorAll('#carousel img');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      carouselImages.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+      showImage(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % carouselImages.length;
+      showImage(currentIndex);
+    });
   </script>
 </body>
 </html>
