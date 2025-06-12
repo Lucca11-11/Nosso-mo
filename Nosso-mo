@@ -319,14 +319,14 @@
     </div>
     <div class="container right">
       <div class="content">
-        <h3>14/02/2025</h3>
-        <p>Nosso primeiro Dia dos Namorados juntos, cheio de amor e sorrisos.</p>
+        <h3>23/12/2024</h3>
+        <p>O dia em que  oficializamos nosso namoro.</p>
       </div>
     </div>
     <div class="container left">
       <div class="content">
-        <h3>20/04/2025</h3>
-        <p>Nossa viagem inesquecível para a praia. Dias perfeitos ao seu lado.</p>
+        <h3>12/06/2025</h3>
+        <p>Nosso primeiro dia dos namorados. Te Amo.</p>
       </div>
     </div>
   </div>
@@ -344,7 +344,7 @@
       <button id="prev-btn">Anterior</button>
       <button id="next-btn">Próximo</button>
     </div>
-    <p id="fraseCarrossel">“Cada momento ao seu lado é uma eternidade de felicidade.”</p>
+    <p id="fraseCarrossel">“Desde a primeira vez que te vi, soube que você era a mulher da minha vida.”</p>
   </div>
 
   <audio id="musica" src="ordinary.mp3"></audio>
